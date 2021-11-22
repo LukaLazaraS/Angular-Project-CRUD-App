@@ -1,0 +1,20 @@
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #264e77;
+
+  a {
+    color: white;
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+
+  .active {
+    color: #91c8ff;
+  }
+}

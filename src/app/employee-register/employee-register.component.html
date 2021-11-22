@@ -1,0 +1,40 @@
+<section class="form-section">
+  <form [formGroup]="form">
+    <div class="form-container">
+      <label for="name">Name </label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-container">
+      <label for="salary">Salary </label>
+      <input
+        type="number"
+        class="form-control"
+        id="salary"
+        formControlName="salary"
+      />
+    </div>
+    <div class="form-container">
+      <label for="age">Age </label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        formControlName="age"
+      />
+    </div>
+    <button
+      type="submit"
+      [disabled]="!this.form.valid"
+      (click)="onRegisterEmployee()"
+      class="btn btn-primary"
+    >
+      Register employee
+    </button>
+  </form>
+</section>

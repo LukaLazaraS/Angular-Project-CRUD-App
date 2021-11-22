@@ -1,0 +1,94 @@
+<section class="employees-list-container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Age</th>
+        <th class="last-th"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let employee of employees | slice: (page - 1) * 5:(page - 1) * 5 + 5
+        "
+      >
+        <th scope="row">{{ employee.id }}</th>
+        <th>{{ employee.employee_name }}</th>
+        <th>{{ employee.employee_salary }}</th>
+        <th>{{ employee.employee_age }}</th>
+        <th class="last-th">
+          <i class="fas fa-user-edit" (click)="onEditUser(employee.id)"></i>
+          <i class="fas fa-trash-alt" (click)="onDeleteUser(employee.id)"></i>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<ngb-pagination
+  class="d-flex justify-content-center"
+  [collectionSize]="employees.length"
+  [pageSize]="5"
+  [(page)]="page"
+></ngb-pagination>
+
+<section class="form-section" *ngIf="isDisableForm">
+  <form [formGroup]="form">
+    <div class="form-container">
+      <label>ID </label>
+      <input
+        type="text"
+        formControlName="id"
+        class="form-control"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-container">
+      <label for="name">Name </label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-container">
+      <label for="salary">Salary </label>
+      <input
+        type="number"
+        class="form-control"
+        id="salary"
+        formControlName="salary"
+      />
+    </div>
+    <div class="form-container">
+      <label for="age">Age </label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        formControlName="age"
+      />
+    </div>
+    <button
+      type="submit"
+      [disabled]="!this.form.valid"
+      (click)="onSaveEmployee()"
+      class="btn btn-primary"
+    >
+      Save employee
+    </button>
+    <button
+      type="button"
+      [disabled]="!this.form.valid"
+      (click)="onExitEditEmployee()"
+      class="btn btn-danger"
+    >
+      Exit
+    </button>
+  </form>
+</section>

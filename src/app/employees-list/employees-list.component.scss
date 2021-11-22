@@ -1,0 +1,63 @@
+.employees-list-container {
+  width: 1000px;
+  margin: 50px auto;
+  height: 300px;
+
+  .table .thead-dark th {
+    background-color: #38638d;
+  }
+
+  .last-th {
+    width: 7%;
+
+    i {
+      cursor: pointer;
+
+      &:last-child {
+        margin-left: 10px;
+        color: red;
+      }
+    }
+  }
+}
+
+.pagination-nav {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.form-section {
+  width: 510px;
+  padding: 50px;
+  margin: 25px auto 0;
+  border: 2px solid steelblue;
+  border-radius: 4px;
+
+  .form-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+
+    label {
+      transform: translateY(12%);
+      font-weight: 500;
+    }
+
+    .form-control {
+      margin-left: 10px;
+      width: 350px;
+
+      &.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+    }
+  }
+
+  button {
+    margin-left: 56px;
+
+    &.btn-danger {
+      margin-left: 10px;
+    }
+  }
+}
