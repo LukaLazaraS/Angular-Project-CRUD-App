@@ -1,4 +1,5 @@
 <section class="employees-list-container">
+  <div class="animation-container"><div class="animation" [@loader]='currentState'></div></div>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -26,6 +27,15 @@
       </tr>
     </tbody>
   </table>
+</section>
+
+<section class="pop-up-section" [@modalContent]='modalState'>
+  <div>Are you sure want to</div>
+  <div>remove user?</div>
+  <div class="button-wrapper">
+    <button mat-raised-button color="primary" (click)="onModalYes()">Yes</button>
+    <button mat-raised-button color="warn" (click)="onModalNo()">No</button>
+  </div>
 </section>
 
 <ngb-pagination

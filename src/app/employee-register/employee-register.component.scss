@@ -1,7 +1,7 @@
 .form-section {
   width: 510px;
   padding: 50px;
-  margin: 50px auto 0;
+  margin: 0 auto;
   background-color: #91c8ff;
   border: 2px solid steelblue;
   border-radius: 4px;
@@ -28,5 +28,19 @@
 
   button {
     margin-left: 56px;
+  }
+}
+
+.animation-container {
+  width: 510px;
+  height: 6px;
+  overflow-x: hidden;
+  margin: 50px auto 0;
+  
+  .animation {
+    width: 300px;
+    height: 5px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,26,162,1) 50%, rgba(255,255,255,1) 100%);
   }
 }
